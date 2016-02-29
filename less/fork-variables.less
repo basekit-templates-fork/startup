@@ -1,0 +1,480 @@
+// ------------------------------------------------
+// BaseKit Standard Template: LESS > Fork Variables
+// ------------------------------------------------
+
+
+// Site container width on Desktop
+@value__container--width: 100%;
+
+
+// Global Widget
+@value__widget--width: 960px;
+@value__widget--margin--desktop: 0 auto 20px;
+
+
+// Feature
+@value__feature--height--desktop: 450px;
+@value__feature--height--tablet:  350px;
+@value__feature--height--mobile:  250px;
+
+@value__feature--content--background--opacity: 0.3;
+
+
+// Footer
+
+@color__footer--border: @color__body--background;
+@color__footer--background: darken(@color__body--background, 70%);
+
+
+
+
+// ------------------------------------------------
+// Template Overrides
+// ------------------------------------------------
+
+
+// Body Background
+
+html {
+    background-color: darken(@color__body--background, 8%);
+    @media only screen and (max-width : 1024px) {
+        background-color: darken(@color__body--background, 70%);
+    }
+}
+
+body {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    background-color: @color__body--background;
+}
+
+// Extended Nav
+
+.extendednavigation {
+    @media only screen and (min-width: 769px) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+// Template Header
+// ------------------------
+
+.template-header {
+    padding: 2.5em 0 0em;
+    @media @tablet {
+        padding: 2em 0 0em;
+        .brand {
+            margin: 0 0 2em;
+        }
+    }
+}
+
+.template-header,
+.template-footer {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+// Feature
+// ------------------------
+.feature {
+    .content-wrap {
+        border: 0;
+    }
+    &:before {
+        border: none;
+    }
+}
+
+// Full width widgets
+// ------------------------
+[data-widget-type="extendednavigation"],
+[data-widget-type="feature"] {
+    &.widget {
+        width: 100%;
+        margin: 0 auto 20px;
+    }
+}
+
+[data-widget-type="profile"].widget {
+    padding: 0 20px;
+    @media @tablet {
+        width: 90%;
+        margin-right: 5%;
+        margin-left: 5%;
+        margin-top: 0;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+}
+
+[data-widget-type="profile"].widget {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+
+// Slideshow
+// ------------------------
+.responsiveslideshow {
+    position: relative;
+    .figure {
+        display: table;
+        width: 100%;
+        background-color: transparent;
+    }
+    .caption {
+        position: relative;
+        width: 100%;
+        vertical-align: middle;
+        display: table-cell;
+        text-align: center;
+        background-color: rgba(0,0,0,0.1);
+        .image-title {
+            font-family: @font__feature-headline--font-family;
+            color: @color__feature-headline--text;
+            font-size: @font__feature-headline--font-size;
+            font-weight: @font__feature-headline--font-weight;
+            line-height: @font__feature-headline--line-height;
+            @media @tablet {
+                font-size: bkscale(@font__feature-headline--font-size, .8);
+                line-height: bkscale(@font__feature-headline--line-height, .8);
+            }
+            @media @mobile {
+                font-size: bkscale(@font__feature-headline--font-size, .6);
+                line-height: bkscale(@font__feature-headline--line-height, .6);
+            }
+        }
+        .image-description {
+            font-family: @font__feature-strapline--font-family;
+            color: @color__feature-strapline--text;
+            font-size: @font__feature-strapline--font-size;
+            font-weight: @font__feature-strapline--font-weight;
+            line-height: @font__feature-strapline--line-height;
+            @media @tablet {
+                font-size: bkscale(@font__feature-strapline--font-size, .9);
+                line-height: bkscale(@font__feature-strapline--line-height, .9);
+            }
+            @media @mobile {
+                font-size: bkscale(@font__feature-strapline--font-size, .8);
+                line-height: bkscale(@font__feature-strapline--line-height, .8);
+            }
+        }
+        .image-title,
+        .image-description {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+    }
+}
+// Slideshow buttons
+.slide-navigation .pause-toggle {
+    @media only screen and (min-width: 480px) {
+        position: relative;
+        width: 100%;
+        top: 380px;
+        right: inherit;
+        width: 40px;
+        height: 40px;
+        &.icon--pause:before {
+            padding: 10px;
+            font-size: 12px;
+            color: @color-swatch5;
+            background-color: fade(@color-swatch1, 10%);
+
+        }
+    }
+    @media @tablet {
+        top: 300px;
+    }
+}
+// Slideshow Height
+.slides-list,
+.responsiveslideshow .figure,
+.slide-navigation {
+    min-height: 450px;
+    @media @tablet {
+        min-height: 350px;
+    }
+    @media @mobile {
+        min-height: 250px;
+    }
+}
+
+.slide-navigation {
+    .icon--previous:before,
+    .icon--next:after {
+        padding: 30px 8px;
+        color: @color-swatch5;
+        background-color: fade(@color-swatch1, 10%);
+    }
+    @media @mobile {
+        min-height: inherit;
+        .button {
+            padding: 4px 12px;
+            width: 40px;
+            height: 40px;
+        }
+        .icon:before,
+        .icon:after {
+            font-size: 12px;
+        }
+    }
+}
+
+
+// Gallery Image Captions
+// ----------------------
+
+// Hide Caption
+.gallery__caption {
+    top: inherit;
+    margin-bottom: -100%;
+    overflow: hidden;
+    border: none;
+}
+
+.gallery__figure {
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery__figure:hover .gallery__caption {
+    margin-bottom: 0;
+}
+
+
+// Margin in header widgets
+// ------------------------
+[data-widget-type="extendednavigation"],
+[data-widget-type="logo"],
+[data-widget-type="companyname"] {
+    &.widget {
+        margin: 0 auto;
+    }
+}
+
+// Forms
+// --------------------------
+@color__form--background: transparent;
+@color__form-legend--background: transparent;
+
+
+.form-body,
+.blogsearch .form-body {
+    padding: 0;
+}
+
+legend {
+    font-size: @font__h3--font-size;
+    line-height: @font__h3--line-height;
+    font-weight: 400;
+    padding: 0 0 20px;
+}
+
+.signupform .fieldset {
+    legend {
+        display: none;
+    }
+    .label {
+        font-family: @font__h3--font-family;
+        font-size: @font__h3--font-size;
+        line-height: @font__h3--line-height;
+        color: @color__form-legend--text;
+        background-color: @color__form-legend--background;
+        font-weight: 400;
+    }
+}
+
+.product-filters .form .form-body {
+    background-color: transparent;
+}
+
+.product-item-image,
+.product-item-image .image-link,
+.product-gallery .gallery-item,
+.product-image .image-link,
+.basket-item-image .image-link {
+    background-color: transparent;
+}
+
+
+
+// Borders and background in forms
+// -------------------------------
+
+select,
+input[type="search"],
+input[type="email"],
+input[type="password"],
+textarea,
+.input--single-line,
+pre,
+th,
+td,
+.ecombasketsummary .table-row,
+.product-actions .form select {
+    border: 1px solid darken(@color__body--background, 10%);
+    background-color: darken(@color__body--background, 2%);
+}
+
+.tweet-item {
+    border: 1px solid darken(@color__twitter-item--background, 6%);
+}
+
+.ecombasketsummary .table-row.table-row--order-total,
+.summary-table .cell {
+    background-color: transparent;
+}
+
+.product-article {
+    padding: 0;
+    border: none;
+}
+
+.product-filters .form .fieldset--search .form-body,
+.product-filters .form .fieldset--filters .form-body {
+    padding: 0 0 10px;
+}
+
+.ecomproductslist .fieldset--filters .form-group:last-child {
+    @media only screen and (min-width: 600px) {
+        margin-right: 10px;
+    }
+}
+
+// Cats and Tags
+
+.post-attributes,
+.product-attributes {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+}
+
+// Buttons
+// -----------------------------
+
+button,
+.button,
+.read-more,
+.signupform__button,
+.blogsearch__button,
+.ecomproductslist__button {
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+}
+
+
+// Content Widget
+// -------------------------------
+
+.content {
+    max-width: 600px;
+    width: auto;
+    margin: 0 auto;
+}
+
+.responsivecolumns {
+    .content {
+        max-width: inherit;
+        width: 100%;
+    }
+}
+
+
+// Add sticky footer
+// ------------------------
+
+// Sticky footer
+
+.site-container {
+    @media only screen and (min-width : 1024px) {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+        align-content: center;
+        -webkit-align-items: stretch;
+        -ms-flex-align: stretch;
+        align-items: stretch;
+        min-height: 100vh;
+    }
+}
+
+.inner-container {
+    @media only screen and (min-width : 1024px) {
+        flex: 1;
+        -webkit-box-flex: 1;
+        -moz-box-flex: 1;
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+    }
+}
+
+// Change footer style
+
+.template-footer {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    border-top: none;
+    @media @mobile {
+        padding: 1em 0;
+    }
+    .profile .social-list {
+        margin-top: inherit;
+    }
+    .social-list {
+        margin-top: inherit;
+    }
+    .social-item {
+        background-color: transparent;
+        .social-link:before {
+            font-size: 17px;
+        }
+    }
+    .address-line,
+    h1, h2, h3, h4, p,
+    .icon--phone:before,
+    .phone-number-link,
+    .phone-number {
+        color: @color__body--background;
+        padding-bottom: 0;
+    }
+    // twitter
+    .profile .tweet-item {
+        background-color: transparent;
+    }
+    .account-link,
+    .tweet-item .tweet-content {
+        color: @color__body--background;
+    }
+    // signup form
+    .profile .signupform .form-body {
+        padding: 0;
+    }
+    .profile .signupform .form {
+        background-color: transparent;
+        .fieldset .label {
+            color: @color__body--background;
+            background-color: transparent;
+        }
+    }
+}
