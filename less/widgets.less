@@ -1030,12 +1030,15 @@ hr {
 
 .profile {
     text-align: center;
+    @media @mobile {
+        margin-bottom: 10px;
+    }
     @media only screen and (min-width: 678px) {
         padding: 0 8em 0;
     }
-    h1,h2,h3,p {
+    h1,h2,h3,p,a {
         font-family: @font__p--font-family;
-        color: @color__p--text;
+        color: @color__body--background;
         font-size: @font__p--font-size;
         font-weight: @font__p--font-weight;
         line-height: @font__p--line-height;
